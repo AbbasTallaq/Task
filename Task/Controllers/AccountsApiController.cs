@@ -92,7 +92,6 @@ namespace Task.Controllers
         /// </summary>
         /// <param name="TaskDTO"></param>
         /// <returns></returns>
-        //Test commect
 
         // POST: api/Accounts1
         [ResponseType(typeof(TaskDTO))]
