@@ -1,0 +1,167 @@
+﻿@model IEnumerable<Task.Models.TaskDTO>
+
+@{
+    ViewBag.Title = "View";
+}
+
+<h2>Accounts List</h2>
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+
+    <a href="@Url.Action("Create")" title="Add new" class="btn btn-primary btn">
+        <span class="glyphicon glyphicon-plus "></span>
+        Add New Account
+    </a>
+
+</p>
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AccountCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ParentAccountCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AccountName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AccountOrder)
+        </th>
+@*
+    <th>
+       @Html.DisplayNameFor(model => model.AccountClassID)
+    </th>
+     <th>
+         @Html.DisplayNameFor(model => model.AccountTypeCode)
+     </th>
+     <th>
+         @Html.DisplayNameFor(model => model.OpenBalanceCredit)
+     </th>
+     <th>
+         @Html.DisplayNameFor(model => model.OpenBalanceDebit)
+     </th>
+     <th>
+         @Html.DisplayNameFor(model => model.StartingBalanceDebit)
+     </th>
+     <th>
+         @Html.DisplayNameFor(model => model.StartingBalanceCredit)
+     </th>
+     <th>
+         @Html.DisplayNameFor(model => model.CreatedBy)
+     </th>
+     <th>
+         @Html.DisplayNameFor(model => model.CreatedOn)
+     </th>
+     <th>
+         @Html.DisplayNameFor(model => model.ModifiedBy)
+     </th>
+     <th>
+         @Html.DisplayNameFor(model => model.ModifiedOn)
+     </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <th>
+            @Html.DisplayFor(modelItem => item.ID)
+        </th>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AccountCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ParentAccountCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AccountName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AccountOrder)
+        </td>
+       @*<td>
+    @Html.DisplayFor(modelItem => item.AccountClass.AccountClassName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.AccountTypeCode)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.OpenBalanceCredit)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.OpenBalanceDebit)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.StartingBalanceDebit)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.StartingBalanceCredit)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CreatedBy)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CreatedOn)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ModifiedBy)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ModifiedOn)
+    </td>*@
+        <td>
+
+            <span>
+                <a href="@Url.Action("Detail", new { id =  item.ID})" title="Edit">
+                    <span class="glyphicon glyphicon-eye-open gi-2x"></span>
+                </a>
+            </span>
+
+            @Html.Raw("|")
+
+
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.ID })*@ 
+            
+
+            <span>
+                <a href="@Url.Action("Edit", new { id =  item.ID})" title="Edit">
+                    <span class="glyphicon glyphicon-edit gi-2x"></span>
+                </a>
+            </span>
+
+            @Html.Raw("|")
+
+            <span>
+                <a href="@Url.Action("Delete", new { id = item.ID  })"  onclick="return confirm('Are you sure you wish to delete this Account ?');" title="Delete">
+                    <span class="glyphicon glyphicon-trash gi-2x"></span>
+                </a>
+            </span>
+
+            @*@Html.ActionLink("Delete", "Delete", new { id=item.ID }, new { onclick = "return confirm('Are you sure you wish to delete this Account ?');" })*@
+        </td>
+    </tr>
+}
+
+
+    <tr>
+        <td>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        </td>
+    </tr>
+
+</table>
+<link rel="stylesheet" href="~/Content/Enlarge.css" />

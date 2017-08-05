@@ -1,0 +1,138 @@
+﻿@model Task.Models.TaskDTO
+
+@{
+    ViewBag.Title = "Detail";
+}
+
+<h2>Detail</h2>
+
+<div>
+    <h4>TaskDTO</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AccountClass.AccountClassName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AccountClass.AccountClassName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CompanyId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompanyId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AccountCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AccountCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ParentAccountCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ParentAccountCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AccountName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AccountName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AccountOrder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AccountOrder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AccountTypeCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AccountTypeCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OpenBalanceCredit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OpenBalanceCredit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OpenBalanceDebit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OpenBalanceDebit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartingBalanceDebit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartingBalanceDebit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartingBalanceCredit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartingBalanceCredit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedOn)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
